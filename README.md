@@ -1,2 +1,2 @@
 # PSIT.NodeTypes
-Neos 3 node types
+Useful node types for Neos 3.0 with Finnish translations
