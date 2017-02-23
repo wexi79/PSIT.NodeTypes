@@ -1,0 +1,20 @@
+{
+  "description": "Useful node types for Neos 3.0 with Finnish translations",
+  "type": "neos-package",
+  "name": "psit/nodetypes",
+  "require": {
+    "neos/neos": "~3.0"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-0": {
+      "PSIT\\NodeTypes": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "PSIT.NodeTypes"
+    }
+  }
+
+}
