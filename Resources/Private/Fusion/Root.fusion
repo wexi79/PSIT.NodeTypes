@@ -1,0 +1,32 @@
+prototype(PSIT.NodeTypes:Section) < prototype(Neos.Fusion:Tag) {
+    tagName = 'section'
+    attributes.class = ${q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    content = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
+prototype(PSIT.NodeTypes:Container) < prototype(Neos.Fusion:Tag) {
+    attributes.class = ${'container' + (q(node).property('fluid') ? '-fluid ' : '') + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    content = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
+prototype(PSIT.NodeTypes:Row) < prototype(Neos.Fusion:Tag) {
+    attributes.class = ${'row ' + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    content = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
+prototype(PSIT.KemvitFi:Column) {
+    attributes.class = ${'col' + (q(node).property('lg') ?' col-lg-' + q(node).property('lg') : '') + (q(node).property('md') ? ' col-md-' + q(node).property('md') : '') + (q(node).property('sm') ? ' col-sm-' + q(node).property('sm') : '') + (q(node).property('xs') ? ' col-xs-' + q(node).property('xs') : '') + ' ' + q(node).property('classes')}
+    lg = ${q(node).property('lg')}
+    md = ${q(node).property('md')}
+    sm = ${q(node).property('sm')}
+    xs = ${q(node).property('xs')}
+    attributes.id = ${q(node).property('id')}
+    columnNodes = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
