@@ -2,4 +2,9 @@ Neos:
   Neos:
     fusion:
       autoInclude:
-        'PSIT.NodeTypes': TRUE
+        PSIT.NodeTypes: TRUE
+    userIntarface:
+      translation:
+        autoInclude:
+          PSIT.NodeTypes:
+            - 'NodeTypes/*'
