@@ -3,7 +3,7 @@ Neos:
     fusion:
       autoInclude:
         PSIT.NodeTypes: TRUE
-    userIntarface:
+    userInterface:
       translation:
         autoInclude:
           PSIT.NodeTypes:
