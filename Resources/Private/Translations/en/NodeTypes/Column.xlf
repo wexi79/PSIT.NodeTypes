@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
-        <body>
-            <trans-unit id="ui.label" xml:space="preserve">
+	<file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="ui.label" xml:space="preserve">
 				<source>Column</source>
 			</trans-unit>
 			<trans-unit id="groups.columnSettings" xml:space="preserve">
-				<source></source>
+				<source>Column settings</source>
 			</trans-unit>
 			<trans-unit id="properties.classes" xml:space="preserve">
 				<source>Column classes</source>
@@ -29,6 +29,6 @@
 			<trans-unit id="properties.name" xml:space="preserve">
 				<source>Column name for backend</source>
 			</trans-unit>
-        </body>
-    </file>
+		</body>
+	</file>
 </xliff>

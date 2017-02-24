@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve" approved="yes">
+				<source>Container</source>
+			<target state="translated">Säiliö</target></trans-unit>
+            <trans-unit id="group.containerSettings" xml:space="preserve" approved="yes">
+				<source>Container settings</source>
+			<target state="translated">Säiliön asetukset</target></trans-unit>
+			<trans-unit id="properties.classes" xml:space="preserve" approved="yes">
+				<source>Container classes</source>
+			<target state="translated">Säiliön luokat</target></trans-unit>
+			<trans-unit id="properties.id" xml:space="preserve" approved="yes">
+				<source>Container ID</source>
+			<target state="translated">Säiliön ID</target></trans-unit>
+            <trans-unit id="properties.fluid" xml:space="preserve" approved="yes">
+            	<source>Fluid container</source>
+            <target state="translated">Täysilevyinen säiliö (fluid)</target></trans-unit>
+			<trans-unit id="properties.name" xml:space="preserve" approved="yes">
+            	<source>Container name for backend</source>
+            <target state="translated">Säiliön nimi backendissä</target></trans-unit>
+        </body>
+    </file>
+</xliff>
