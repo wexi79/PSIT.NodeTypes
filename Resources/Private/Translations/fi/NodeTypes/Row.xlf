@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve" approved="yes">
+				<source>Row</source>
+			<target state="translated">Rivi</target></trans-unit>
+			<trans-unit id="groups.rowSettings" xml:space="preserve" approved="yes">
+				<source>Row settings</source>
+			<target state="translated">Rivin asetukset</target></trans-unit>
+			<trans-unit id="properties.classes" xml:space="preserve" approved="yes">
+				<source>Row classes</source>
+			<target state="translated">Rivin luokat</target></trans-unit>
+			<trans-unit id="properties.id" xml:space="preserve" approved="yes">
+				<source>Row ID</source>
+			<target state="translated">Rivin ID</target></trans-unit>
+			<trans-unit id="properties.name" xml:space="preserve" approved="yes">
+				<source>Row name for backend</source>
+			<target state="translated">Rivin nimi backendissä</target></trans-unit>
+        </body>
+    </file>
+</xliff>

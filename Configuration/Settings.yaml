@@ -1,0 +1,11 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        PSIT.NodeTypes: TRUE
+    userInterface:
+      translation:
+        autoInclude:
+          PSIT.NodeTypes:
+            - Main
+            - 'NodeTypes/*'
