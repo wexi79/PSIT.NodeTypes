@@ -7,4 +7,5 @@ Neos:
       translation:
         autoInclude:
           PSIT.NodeTypes:
+            - Main
             - 'NodeTypes/*'

@@ -20,7 +20,7 @@ prototype(PSIT.NodeTypes:Row) < prototype(Neos.Fusion:Tag) {
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
 
-prototype(PSIT.KemvitFi:Column) {
+prototype(PSIT.KemvitFi:Column) < prototype(Neos.Fusion:Tag) {
     attributes.class = ${'col' + (q(node).property('lg') ?' col-lg-' + q(node).property('lg') : '') + (q(node).property('md') ? ' col-md-' + q(node).property('md') : '') + (q(node).property('sm') ? ' col-sm-' + q(node).property('sm') : '') + (q(node).property('xs') ? ' col-xs-' + q(node).property('xs') : '') + ' ' + q(node).property('classes')}
     lg = ${q(node).property('lg')}
     md = ${q(node).property('md')}
