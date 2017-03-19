@@ -2,6 +2,7 @@ prototype(PSIT.NodeTypes:Section) < prototype(Neos.Fusion:Tag) {
     tagName = 'section'
     attributes.class = ${q(node).property('classes')}
     attributes.id = ${q(node).property('id')}
+    bg-image = ${q(node).property('bg-image')}
     content = Neos.Neos:ContentCollectionRenderer
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }

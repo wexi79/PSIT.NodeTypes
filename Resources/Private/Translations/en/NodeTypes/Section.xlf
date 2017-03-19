@@ -17,6 +17,66 @@
 			<trans-unit id="properties.name" xml:space="preserve">
 				<source>Section name for backend</source>
 			</trans-unit>
+			<trans-unit id="properties.bg-attachment" xml:space="preserve">
+				<source>Background attachment</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.placeholder" xml:space="preserve">
+				<source>Select background attachment</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.values.fixed" xml:space="preserve">
+				<source>Fixed</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.values.inherit" xml:space="preserve">
+				<source>Inherit</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.values.initial" xml:space="preserve">
+				<source>Initial</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.values.local" xml:space="preserve">
+				<source>Local</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-attachment.selectBoxEditor.values.scroll" xml:space="preserve">
+				<source>Scroll</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-color" xml:space="preserve">
+				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-image" xml:space="preserve">
+				<source>Background image</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position" xml:space="preserve">
+				<source>Background position</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.placeholder" xml:space="preserve">
+				<source>Select background position</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.l-t" xml:space="preserve">
+				<source>Left top</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.l-c" xml:space="preserve">
+				<source>Left center</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.l-b" xml:space="preserve">
+				<source>Left bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.r-t" xml:space="preserve">
+				<source>Right top</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.r-c" xml:space="preserve">
+				<source>Right center</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.r-b" xml:space="preserve">
+				<source>Right bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.c-t" xml:space="preserve">
+				<source>Center top</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.c-c" xml:space="preserve">
+				<source>Center center</source>
+			</trans-unit>
+			<trans-unit id="properties.bg-position.selectBoxEditor.values.c-b" xml:space="preserve">
+				<source>Center bottom</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>
