@@ -26,3 +26,7 @@ prototype(PSIT.NodeTypes:Column) < prototype(Neos.Fusion:Tag) {
     content = Neos.Neos:ContentCollectionRenderer
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
+
+prototype(PSIT.NodeTypes:ResponsiveImage) < prototype(Neos.NodeTypes:Image) {
+    classes = ${q(node).property('classes')}
+}
