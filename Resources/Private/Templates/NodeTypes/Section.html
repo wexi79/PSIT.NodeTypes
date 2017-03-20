@@ -1,0 +1,9 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<section {attributes -> f:format.raw()} style="
+    <f:if condition="{minHeight}">min-height: {minHeight};</f:if>
+    <f:if condition="{bgImage}">background-image: url({neos.media:uri.image(image: bgImage)});</f:if>
+    <f:if condition="{bgSize}">background-size: {bgSize};</f:if>
+    ">
+    {content -> f:format.raw()}
+</section>

@@ -14,7 +14,7 @@
           label: i18n
           position: 10
   properties:
-    bg-attachment:
+    bgAttachment:
       type: string
       ui:
         label: i18n
@@ -36,19 +36,23 @@
               scroll:
                 label: i18n
         reloadIfChanged: TRUE
-    bg-color:
+    bgColor:
       type: string
       ui:
         label: i18n
         inspector:
           group: 'sectionSettings'
-    bg-image:
+    bgImage:
       type: 'Neos\Media\Domain\Model\ImageInterface'
       ui:
         label: i18n
         inspector:
           group: 'sectionSettings'
-    bg-position:
+          editorOptions:
+            allowEmpty: TRUE
+            features:
+              crop: TRUE
+    bgPosition:
       type: string
       ui:
         label: i18n
@@ -59,31 +63,45 @@
             allowEmpty: TRUE
             placeholder: i18n
             values:
-              l-t:
+              lt:
                 label: i18n
-              l-c:
+              lc:
                 label: i18n
-              l-b:
+              lb:
                 label: i18n
-              r-t:
+              rt:
                 label: i18n
-              r-c:
+              rc:
                 label: i18n
-              r-b:
+              rb:
                 label: i18n
-              c-t:
+              ct:
                 label: i18n
-              c-c:
+              cc:
                 label: i18n
-              c-b:
+              cb:
                 label: i18n
         reloadIfChanged: TRUE
-    bg-repeat:
-    bg-size:
-
-
-
+    bgRepeat:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'sectionSettings'
+    bgSize:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'sectionSettings'
     classes:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'sectionSettings'
+        reloadIfChanged: TRUE
+    minHeight:
       type: string
       ui:
         label: i18n
