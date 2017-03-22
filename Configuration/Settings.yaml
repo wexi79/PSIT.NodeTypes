@@ -9,3 +9,9 @@ Neos:
           PSIT.NodeTypes:
             - Main
             - 'NodeTypes/*'
+    nodeTypes:
+      groups:
+        psit:
+          position: 400
+          label: 'PSIT'
+          collapsed: FALSE

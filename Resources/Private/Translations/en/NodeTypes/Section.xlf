@@ -47,6 +47,12 @@
 			<trans-unit id="properties.bgPosition" xml:space="preserve">
 				<source>Background position</source>
 			</trans-unit>
+			<trans-unit id="properties.bgRepeat" xml:space="preserve">
+				<source>Background repeat</source>
+			</trans-unit>
+			<trans-unit id="properties.bgSize" xml:space="preserve">
+				<source>Background size</source>
+			</trans-unit>
 			<trans-unit id="properties.bgPosition.selectBoxEditor.placeholder" xml:space="preserve">
 				<source>Select background position</source>
 			</trans-unit>
@@ -76,6 +82,9 @@
 			</trans-unit>
 			<trans-unit id="properties.bgPosition.selectBoxEditor.values.cb" xml:space="preserve">
 				<source>Center bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.minHeight" xml:space="preserve">
+				<source>Section min-height value</source>
 			</trans-unit>
         </body>
     </file>
