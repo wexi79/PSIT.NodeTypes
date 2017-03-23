@@ -391,3 +391,50 @@
   constraints:
     nodeTypes:
       '*': TRUE
+
+'PSIT.NodeTypes:D3Pie':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  ui:
+    label: i18n
+    icon: 'icon-pie-chart'
+    group: 'psit'
+    inspector:
+      groups:
+        pieSettings:
+          label: i18n
+          position: 10
+  properties:
+    height:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'pieSettings'
+    width:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'pieSettings'
+    outerRadius:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'pieSettings'
+    innerRadius:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'pieSettings'
+    pieId:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'pieSettings'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': TRUE

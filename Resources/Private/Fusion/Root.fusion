@@ -52,3 +52,12 @@ prototype(PSIT.NodeTypes:Panel){
     panelNodes = Neos.Neos:ContentCollectionRenderer
     @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }
+
+prototype(PSIT.NodeTypes:D3Pie){
+    templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/D3Pie.html'
+    pieId = ${q(node).property('pieId')}
+    height = ${q(node).property('height')}
+    width = ${q(node).property('width')}
+    outerRadius = ${q(node).property('outerRadius')}
+    innerRadius = ${q(node).property('innerRadius')}
+}
