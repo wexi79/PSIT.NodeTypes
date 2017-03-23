@@ -5,6 +5,9 @@
 			<trans-unit id="ui.label" xml:space="preserve">
 				<source>D3 Pie chart</source>
 			</trans-unit>
+			<trans-unit id="groups.pieSettings" xml:space="preserve">
+				<source>Pie chart settings</source>
+			</trans-unit>
             <trans-unit id="properties.pieId" xml:space="preserve">
             	<source>Pie ID</source>
             </trans-unit>

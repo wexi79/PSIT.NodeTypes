@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="ui.label" xml:space="preserve">
+				<source>Pie chart data node</source>
+			</trans-unit>
+			<trans-unit id="groups.pieDataSettings" xml:space="preserve">
+				<source>Pie chart data settings</source>
+			</trans-unit>
+            <trans-unit id="properties.color" xml:space="preserve">
+            	<source>Segment color</source>
+            </trans-unit>
+			<trans-unit id="properties.title" xml:space="preserve">
+            	<source>Segment label</source>
+            </trans-unit>
+			<trans-unit id="properties.dataValue" xml:space="preserve">
+            	<source>Segment value</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

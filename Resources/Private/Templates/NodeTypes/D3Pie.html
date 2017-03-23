@@ -8,9 +8,24 @@
     var width = "{width}";
     var outerRadius = "{outerRadius}";
     var innerRadius = "{innerRadius}";
-    outerRadius = outerRadius ? outerRadius : "";
+
+    var pieData = '{pieData}';
+    var pieDataDecoded = he.decode(pieData);
+    pieDataDecoded = pieDataDecoded.split("|");
+
+    for (var i = 0, len = pieDataDecoded.length; i < len; i++){
+        var str = pieDataDecoded[i];
+
+        if(str != ''){
+            pieDataDecoded[i] = JSON.parse(str);
+            pieDataDecoded[i].value = parseFloat(pieDataDecoded[i].value);
+        }
+    }
+
+    width = width ? width : 300;
+    height = height ? height : 300;
+    outerRadius = outerRadius ? outerRadius : "75%";
     innerRadius = innerRadius ? innerRadius : 0;
-    console.log(innerRadius);
     var pie = new d3pie(pieId, {
         header: {
             title: {
@@ -18,11 +33,7 @@
             }
         },
         data: {
-            content: [
-                { label: "1", value: 264131},
-                { label: "2", value: 218812},
-                { label: "3", value: 157618},
-            ]
+            content: pieDataDecoded
         },
         size: {
             canvasHeight: height,
@@ -33,5 +44,14 @@
 
     });
 
-
 </script>
+<div>
+<f:if condition="{neos:rendering.inBackend()}">
+    <f:then>
+        {pieNodes -> f:format.raw()}
+    </f:then>
+    <f:else>
+        {pieData -> f:debug()}
+    </f:else>
+</f:if>
+</div>
