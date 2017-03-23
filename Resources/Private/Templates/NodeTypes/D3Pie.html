@@ -1,0 +1,37 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<div id="{pieId}"></div>
+<script>
+
+    var pieId = "{pieId}";
+    var height = "{height}";
+    var width = "{width}";
+    var outerRadius = "{outerRadius}";
+    var innerRadius = "{innerRadius}";
+    outerRadius = outerRadius ? outerRadius : "";
+    innerRadius = innerRadius ? innerRadius : 0;
+    console.log(innerRadius);
+    var pie = new d3pie(pieId, {
+        header: {
+            title: {
+                text: ""
+            }
+        },
+        data: {
+            content: [
+                { label: "1", value: 264131},
+                { label: "2", value: 218812},
+                { label: "3", value: 157618},
+            ]
+        },
+        size: {
+            canvasHeight: height,
+            canvasWidth: width,
+            pieOuterRadius: outerRadius,
+            pieInnerRadius: innerRadius
+        }
+
+    });
+
+
+</script>
