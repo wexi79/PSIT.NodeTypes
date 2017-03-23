@@ -60,4 +60,17 @@ prototype(PSIT.NodeTypes:D3Pie){
     width = ${q(node).property('width')}
     outerRadius = ${q(node).property('outerRadius')}
     innerRadius = ${q(node).property('innerRadius')}
+    pieNodes = Neos.Neos:ContentCollectionRenderer
+    pieData = Neos.Fusion:Collection {
+      collection = ${q(node).children().children().filter('[instanceof PSIT.NodeTypes:D3PieData]').get()}
+        itemRenderer = ${'{ "label": "' + q(item).property('title') + '", "value": "' + q(item).property('dataValue') + (q(item).property('color') ? '", "color": "' + q(item).property('color') : '') + '" }|'}
+    }
+
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
+prototype(PSIT.NodeTypes:D3PieData){
+    templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/D3PieData.html'
+    color = ${q(node).property('color')}
+
 }
