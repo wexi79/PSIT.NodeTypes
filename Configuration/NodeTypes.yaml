@@ -318,6 +318,12 @@
         inspector:
           group: 'extendedHeadlineSettings'
         reloadIfChanged: TRUE
+    title:
+      ui:
+        aloha:
+          'format':
+            'strong': TRUE
+            'em': TRUE
 
 'PSIT.NodeTypes:Panel':
   superTypes:
@@ -376,6 +382,32 @@
       type: string
       ui:
         inlineEditable: TRUE
+        aloha:
+          placeholder: i18n
+          autoparagraph: TRUE
+          'format':
+            'strong': TRUE
+            'em': TRUE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'del': FALSE
+            'p': TRUE
+            'h1': TRUE
+            'h2': TRUE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+            'pre': TRUE
+            'removeFormat': TRUE
+          'table':
+            'table': TRUE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
     footer:
       type: string
       ui:
@@ -394,6 +426,9 @@
             'h1': TRUE
             'h2': TRUE
             'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
             'pre': TRUE
             'removeFormat': TRUE
           'table':
