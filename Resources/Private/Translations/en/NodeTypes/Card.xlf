@@ -3,28 +3,34 @@
     <file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-				<source>Panel</source>
+				<source>Card</source>
 			</trans-unit>
 			<trans-unit id="groups.panelSettings" xml:space="preserve">
-				<source>Panel settings</source>
+				<source>Card settings</source>
 			</trans-unit>
 			<trans-unit id="properties.classes" xml:space="preserve">
-				<source>Panel classes</source>
+				<source>Card classes</source>
 			</trans-unit>
 			<trans-unit id="properties.headclasses" xml:space="preserve">
-				<source>Panel header classes</source>
+				<source>Card header classes</source>
 			</trans-unit>
 			<trans-unit id="properties.bodyclasses" xml:space="preserve">
-				<source>Panel body classes</source>
+				<source>Card body classes</source>
 			</trans-unit>
 			<trans-unit id="properties.footclasses" xml:space="preserve">
-				<source>Panel footer classes</source>
+				<source>Card footer classes</source>
 			</trans-unit>
 			<trans-unit id="properties.minHeight" xml:space="preserve">
-				<source>Panel body min-height</source>
+				<source>Card body min-height</source>
 			</trans-unit>
 			<trans-unit id="properties.footerlink" xml:space="preserve">
-				<source>Panel footer link</source>
+				<source>Card footer link</source>
+			</trans-unit>
+            <trans-unit id="properties.heading.aloha.placeholder" xml:space="preserve">
+				<source>Card heading text</source>
+			</trans-unit>
+            <trans-unit id="properties.footer.aloha.placeholder" xml:space="preserve">
+				<source>Card footer text</source>
 			</trans-unit>
         </body>
     </file>
