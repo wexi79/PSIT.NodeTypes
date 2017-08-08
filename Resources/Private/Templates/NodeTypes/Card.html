@@ -1,0 +1,21 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<div class="card<f:if condition="{classes}"> {classes}</f:if>"<f:if condition="{id}">id="{id}"</f:if>>
+<div class="card-header<f:if condition="{headclasses}"> {headclasses}</f:if>">
+{neos:contentElement.editable(property: 'heading')}
+</div>
+<div class="card-block<f:if condition="{bodyclasses}"> {bodyclasses}</f:if>"<f:if condition="{minHeight}">style="min-height: {minHeight}"</f:if>>
+{panelNodes -> f:format.raw()}
+</div>
+<f:if condition="{footer} || {neos:rendering.inBackend()}">
+    <div class="card-footer<f:if condition="{footclasses}"> {footclasses}</f:if>">
+<f:if condition="{footerlink}">
+    <f:then>
+        <neos:link.node node="{footerlink}" class="btn btn-sm btn-primary">{neos:contentElement.editable(property:'footer')}</neos:link.node>
+    </f:then>
+    <f:else>{neos:contentElement.editable(property: 'footer')}</f:else>
+</f:if>
+</div>
+</f:if>
+</div>
+

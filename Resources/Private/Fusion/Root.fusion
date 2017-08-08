@@ -85,6 +85,22 @@ prototype(PSIT.NodeTypes:ExtendedHeadline){
     classes = ${q(node).property('classes')}
 }
 
+prototype(PSIT.NodeTypes:Card){
+    templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/Card.html'
+    minHeight = ${q(node).property('minHeight')}
+    classes = ${q(node).property('classes')}
+    bodyclasses = ${q(node).property('bodyclasses')}
+    headclasses = ${q(node).property('headclasses')}
+    footclasses = ${q(node).property('footclasses')}
+    id = ${q(node).property('id')}
+    heading = ${q(node).property('heading')}
+    footer = ${q(node).property('footer')}
+    foo = 'TRUE'
+    footerlink = ${q(node).property('footerlink')}
+    panelNodes = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
 prototype(PSIT.NodeTypes:Panel){
     templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/Panel.html'
     minHeight = ${q(node).property('minHeight')}
