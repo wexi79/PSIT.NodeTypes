@@ -5,8 +5,11 @@
             <trans-unit id="ui.label" xml:space="preserve">
 				<source>Card</source>
 			</trans-unit>
-			<trans-unit id="groups.panelSettings" xml:space="preserve">
+			<trans-unit id="groups.cardSettings" xml:space="preserve">
 				<source>Card settings</source>
+			</trans-unit>
+			<trans-unit id="properties.collapsible" xml:space="preserve">
+				<source>Collapsible card</source>
 			</trans-unit>
 			<trans-unit id="properties.bgAttachment" xml:space="preserve">
 				<source>Background attachment</source>

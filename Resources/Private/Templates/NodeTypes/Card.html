@@ -3,10 +3,10 @@
 <div class="card<f:if condition="{classes}"> {classes}</f:if>"<f:if condition="{id}">id="{id}"</f:if> style="
 <f:if condition="{minHeight}">min-height: {minHeight};</f:if><f:if condition="{bgAttachment}">background-attachment: {bgAttachment};</f:if><f:if condition="{bgColor}">background-color: {bgColor};</f:if><f:if condition="{bgImage}">background-image: url({neos.media:uri.image(image: bgImage)});</f:if><f:if condition="{bgSize}">background-size: {bgSize};</f:if><f:if condition="{bgPosition}">background-position: {bgPosition};</f:if><f:if condition="{bgRepeat}">background-repeat: {bgRepeat};</f:if>">
 <div class="card-header<f:if condition="{headclasses}"> {headclasses}</f:if>" style="
-<f:if condition="{headbgColor}">background-color: {headbgColor};</f:if>">
-{neos:contentElement.editable(property: 'heading')}
+<f:if condition="{headbgColor}">background-color: {headbgColor};</f:if>" <f:if condition="{collapsible}">data-toggle="collapse" data-target="#{bodyId}"</f:if>>
+{neos:contentElement.editable(property: 'heading')} <f:if condition="{collapsible}"><i class="fa fa-caret-down"></i></f:if>
 </div>
-<div class="card-block<f:if condition="{bodyclasses}"> {bodyclasses}</f:if>" style="<f:if condition="{minHeight}">min-height: {minHeight}</f:if><f:if condition="{bodybgColor}">background-color: {bodybgColor};</f:if>">
+<div class="card-block<f:if condition="{bodyclasses}"> {bodyclasses}</f:if><f:if condition="{collapsible}"> collapse</f:if>" id="{bodyId}" style="<f:if condition="{minHeight}">min-height: {minHeight}</f:if><f:if condition="{bodybgColor}">background-color: {bodybgColor};</f:if>" <f:if condition="{collapsible}">data-toggle="collapse"</f:if>>
 {panelNodes -> f:format.raw()}
 </div>
 <f:if condition="{footer} || {neos:rendering.inBackend()}">

@@ -343,6 +343,14 @@
           label: i18n
           position: 10
   properties:
+    collapsible:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+          position: 10
+        reloadIfChanged: TRUE
     bgAttachment:
       type: string
       ui:
