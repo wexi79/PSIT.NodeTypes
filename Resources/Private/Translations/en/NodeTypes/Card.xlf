@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="PSIT.NodeTypes" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+				<source>Card</source>
+			</trans-unit>
+			<trans-unit id="groups.cardSettings" xml:space="preserve">
+				<source>Card settings</source>
+			</trans-unit>
+			<trans-unit id="properties.collapsible" xml:space="preserve">
+				<source>Collapsible card</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment" xml:space="preserve">
+				<source>Background attachment</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.placeholder" xml:space="preserve">
+				<source>Select background attachment</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.values.fixed" xml:space="preserve">
+				<source>Fixed</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.values.inherit" xml:space="preserve">
+				<source>Inherit</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.values.initial" xml:space="preserve">
+				<source>Initial</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.values.local" xml:space="preserve">
+				<source>Local</source>
+			</trans-unit>
+			<trans-unit id="properties.bgAttachment.selectBoxEditor.values.scroll" xml:space="preserve">
+				<source>Scroll</source>
+			</trans-unit>
+			<trans-unit id="properties.bgColor" xml:space="preserve">
+				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="properties.headbgColor" xml:space="preserve">
+				<source>Header background color</source>
+			</trans-unit>
+			<trans-unit id="properties.bodybgColor" xml:space="preserve">
+				<source>Body background color</source>
+			</trans-unit>
+			<trans-unit id="properties.footbgColor" xml:space="preserve">
+				<source>Footer background color</source>
+			</trans-unit>
+			<trans-unit id="properties.bgImage" xml:space="preserve">
+				<source>Background image</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition" xml:space="preserve">
+				<source>Background position</source>
+			</trans-unit>
+			<trans-unit id="properties.bgRepeat" xml:space="preserve">
+				<source>Background repeat</source>
+			</trans-unit>
+			<trans-unit id="properties.bgSize" xml:space="preserve">
+				<source>Background size</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.placeholder" xml:space="preserve">
+				<source>Select background position</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.lt" xml:space="preserve">
+				<source>Left top</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.lc" xml:space="preserve">
+				<source>Left center</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.lb" xml:space="preserve">
+				<source>Left bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.rt" xml:space="preserve">
+				<source>Right top</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.rc" xml:space="preserve">
+				<source>Right center</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.rb" xml:space="preserve">
+				<source>Right bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.ct" xml:space="preserve">
+				<source>Center top</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.cc" xml:space="preserve">
+				<source>Center center</source>
+			</trans-unit>
+			<trans-unit id="properties.bgPosition.selectBoxEditor.values.cb" xml:space="preserve">
+				<source>Center bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.classes" xml:space="preserve">
+				<source>Card classes</source>
+			</trans-unit>
+			<trans-unit id="properties.headclasses" xml:space="preserve">
+				<source>Card header classes</source>
+			</trans-unit>
+			<trans-unit id="properties.bodyclasses" xml:space="preserve">
+				<source>Card body classes</source>
+			</trans-unit>
+			<trans-unit id="properties.footclasses" xml:space="preserve">
+				<source>Card footer classes</source>
+			</trans-unit>
+			<trans-unit id="properties.minHeight" xml:space="preserve">
+				<source>Card body min-height</source>
+			</trans-unit>
+			<trans-unit id="properties.footerlink" xml:space="preserve">
+				<source>Card footer link</source>
+			</trans-unit>
+            <trans-unit id="properties.heading.aloha.placeholder" xml:space="preserve">
+				<source>Card heading text</source>
+			</trans-unit>
+            <trans-unit id="properties.footer.aloha.placeholder" xml:space="preserve">
+				<source>Card footer text</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

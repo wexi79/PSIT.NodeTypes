@@ -85,8 +85,74 @@ prototype(PSIT.NodeTypes:ExtendedHeadline){
     classes = ${q(node).property('classes')}
 }
 
+prototype(PSIT.NodeTypes:Card){
+    templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/Card.html'
+    bodyId= ${q(node).property('_identifier')}
+    collapsible = ${q(node).property('collapsible')}
+    minHeight = ${q(node).property('minHeight')}
+    classes = ${q(node).property('classes')}
+    bodyclasses = ${q(node).property('bodyclasses')}
+    headclasses = ${q(node).property('headclasses')}
+    footclasses = ${q(node).property('footclasses')}
+    id = ${q(node).property('id')}
+    heading = ${q(node).property('heading')}
+    footer = ${q(node).property('footer')}
+    foo = 'TRUE'
+    footerlink = ${q(node).property('footerlink')}
+    panelNodes = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
+
 prototype(PSIT.NodeTypes:Panel){
     templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/Panel.html'
+    bgPosition = Neos.Fusion:Case {
+
+        cb {
+            condition = ${q(node).property('bgPosition') == 'cb'}
+            renderer = ${'center bottom'}
+        }
+
+        cc {
+            condition = ${q(node).property('bgPosition') == 'cc'}
+            renderer = ${'center center'}
+        }
+
+        ct {
+            condition = ${q(node).property('bgPosition') == 'ct'}
+            renderer = ${'center top'}
+        }
+
+        lb {
+            condition = ${q(node).property('bgPosition') == 'lb'}
+            renderer = ${'left bottom'}
+        }
+
+        lc {
+            condition = ${q(node).property('bgPosition') == 'lc'}
+            renderer = ${'left center'}
+        }
+
+        lt {
+            condition = ${q(node).property('bgPosition') == 'lt'}
+            renderer = ${'left top'}
+        }
+
+        rb {
+            condition = ${q(node).property('bgPosition') == 'rb'}
+            renderer = ${'right bottom'}
+        }
+
+        rc {
+            condition = ${q(node).property('bgPosition') == 'rc'}
+            renderer = ${'right center'}
+        }
+
+        rt {
+            condition = ${q(node).property('bgPosition') == 'rt'}
+            renderer = ${'right top'}
+        }
+
+    }
     minHeight = ${q(node).property('minHeight')}
     classes = ${q(node).property('classes')}
     bodyclasses = ${q(node).property('bodyclasses')}

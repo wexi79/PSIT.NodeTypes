@@ -325,6 +325,238 @@
             'strong': TRUE
             'em': TRUE
 
+'PSIT.NodeTypes:Card':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+ #   'Neos.Neos:ContentCollection': TRUE
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  childNodes:
+    panelNodes:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: i18n
+    icon: 'icon-folder-open-alt'
+    group: 'psit'
+    inspector:
+      groups:
+        cardSettings:
+          label: i18n
+          position: 10
+  properties:
+    collapsible:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+          position: 10
+        reloadIfChanged: TRUE
+    bgAttachment:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: i18n
+            values:
+              fixed:
+                label: i18n
+              inherit:
+                label: i18n
+              initial:
+                label: i18n
+              local:
+                label: i18n
+              scroll:
+                label: i18n
+        reloadIfChanged: TRUE
+    bgColor:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    bgImage:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+          editorOptions:
+            allowEmpty: TRUE
+            features:
+              crop: TRUE
+    bgPosition:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: i18n
+            values:
+              lt:
+                label: i18n
+              lc:
+                label: i18n
+              lb:
+                label: i18n
+              rt:
+                label: i18n
+              rc:
+                label: i18n
+              rb:
+                label: i18n
+              ct:
+                label: i18n
+              cc:
+                label: i18n
+              cb:
+                label: i18n
+        reloadIfChanged: TRUE
+    bgRepeat:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    bgSize:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    minHeight:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
+    classes:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
+    headclasses:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
+    headbgColor:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    bodyclasses:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
+    bodybgColor:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    footbgColor:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+    footclasses:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
+    heading:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: i18n
+          autoparagraph: TRUE
+          'format':
+            'strong': TRUE
+            'em': TRUE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'del': FALSE
+            'p': TRUE
+            'h1': TRUE
+            'h2': TRUE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+            'pre': TRUE
+            'removeFormat': TRUE
+          'table':
+            'table': TRUE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
+    footer:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: i18n
+          autoparagraph: TRUE
+          'format':
+            'strong': TRUE
+            'em': TRUE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'del': FALSE
+            'p': TRUE
+            'h1': TRUE
+            'h2': TRUE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+            'pre': TRUE
+            'removeFormat': TRUE
+          'table':
+            'table': TRUE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
+    footerlink:
+      type: string
+      ui:
+        label: i18n
+        inlineEditable: FALSE
+        inspector:
+          group: 'cardSettings'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+  constraints:
+    nodeTypes:
+      '*': TRUE
+
+
 'PSIT.NodeTypes:Panel':
   superTypes:
     'Neos.Neos:Content': TRUE
