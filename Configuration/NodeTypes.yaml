@@ -280,7 +280,7 @@
 
 'PSIT.NodeTypes:ResponsiveImage':
   superTypes:
-    'Neos.NodeTypes:Image': TRUE
+    'Neos.NodeTypes.BaseMixins:ImageMixin': TRUE
   ui:
     group: 'psit'
     label: 'Responsive image'
