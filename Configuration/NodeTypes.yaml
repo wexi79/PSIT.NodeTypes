@@ -300,7 +300,7 @@
 
 'PSIT.NodeTypes:ExtendedHeadline':
   superTypes:
-    'Neos.NodeTypes:Headline': TRUE
+    'Neos.NodeTypes.BaseMixins:TitleMixin': TRUE
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('title') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   ui:
     label: i18n
