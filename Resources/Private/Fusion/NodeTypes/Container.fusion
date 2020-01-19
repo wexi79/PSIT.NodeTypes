@@ -1,0 +1,6 @@
+prototype(PSIT.NodeTypes:Container) < prototype(Neos.Fusion:Tag) {
+    attributes.class = ${'container' + (q(node).property('fluid') ? '-fluid ' : ' ') + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    content = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}

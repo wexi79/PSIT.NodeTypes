@@ -1,0 +1,3 @@
+prototype(PSIT.NodeTypes:ExtendedHeadline){
+    classes = ${q(node).property('classes')}
+}

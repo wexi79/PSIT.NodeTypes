@@ -1,0 +1,27 @@
+prototype(PSIT.NodeTypes:Card) < prototype(Neos.Neos:ContentComponent){
+
+    /*
+
+    templatePath = 'resource://PSIT.NodeTypes/Private/Templates/NodeTypes/Card.html'
+    bodyId= ${q(node).property('_identifier')}
+    collapsible = ${q(node).property('collapsible')}
+    minHeight = ${q(node).property('minHeight')}
+    classes = ${q(node).property('classes')}
+    bodyclasses = ${q(node).property('bodyclasses')}
+    headclasses = ${q(node).property('headclasses')}
+    footclasses = ${q(node).property('footclasses')}
+    id = ${q(node).property('id')}
+    heading = ${q(node).property('heading')}
+    footer = ${q(node).property('footer')}
+    foo = 'TRUE'
+    footerlink = ${q(node).property('footerlink')}
+    panelNodes = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+
+    */
+
+    renderer = afx`
+        <div class="card">
+        </div>
+    `
+}

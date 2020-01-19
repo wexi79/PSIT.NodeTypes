@@ -1,0 +1,6 @@
+prototype(PSIT.NodeTypes:Column) < prototype(Neos.Fusion:Tag) {
+    attributes.class = ${'col' + (q(node).property('xs') ? '-' + q(node).property('xs') : '') + (q(node).property('lg') ?' col-lg-' + q(node).property('lg') : '') + (q(node).property('md') ? ' col-md-' + q(node).property('md') : '') + (q(node).property('sm') ? ' col-sm-' + q(node).property('sm') : '') + ' ' + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    content = Neos.Neos:ContentCollectionRenderer
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}
