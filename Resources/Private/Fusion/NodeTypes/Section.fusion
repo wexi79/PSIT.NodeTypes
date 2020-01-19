@@ -48,7 +48,7 @@ prototype(PSIT.NodeTypes:Section) < prototype(Neos.Neos:ContentComponent) {
     @context.minHeight = Neos.Fusion:Case {
         hasColor {
             condition = ${q(node).property('minHeight')}
-            renderer = ${'minheight:' + q(node).property('minHeight')}
+            renderer = ${'min-height:' + q(node).property('minHeight')}
         }
         fallback {
             condition = ${true}
