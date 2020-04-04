@@ -1,0 +1,12 @@
+prototype(PSIT.NodeTypes:Row) < prototype(PSIT.NodeTypes:BaseNode) {
+    attributes.class = ${'row ' + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    //content = Neos.Neos:ContentCollectionRenderer
+    //@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+
+    renderer = afx`
+<div class="row" data-image-src={bgImage} style={props.containerStyle}>
+<Neos.Neos:ContentCollectionRenderer/>
+</div>
+`
+}

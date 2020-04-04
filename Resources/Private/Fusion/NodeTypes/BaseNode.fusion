@@ -1,0 +1,5 @@
+prototype(PSIT.NodeTypes:BaseNode) < prototype(Neos.Neos:ContentComponent){
+
+
+
+}

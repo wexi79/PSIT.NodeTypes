@@ -1,8 +1,8 @@
-'PSIT.NodeTypes:Section':
+'PSIT.NodeTypes:BaseNode':
+  abstract: true
   superTypes:
-    'Neos.Neos:Content': TRUE
-    'Neos.Neos:ContentCollection': TRUE
-  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+      'Neos.Neos:Content': TRUE
+      'Neos.Neos:ContentCollection': TRUE
   ui:
     label: i18n
     icon: 'icon-folder-open-alt'
@@ -10,16 +10,17 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        sectionSettings:
+        nodeSettings:
           label: i18n
           position: 10
+
   properties:
     bgAttachment:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             allowEmpty: TRUE
@@ -41,13 +42,13 @@
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
     bgImage:
       type: 'Neos\Media\Domain\Model\ImageInterface'
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
           editorOptions:
             allowEmpty: TRUE
             features:
@@ -57,7 +58,7 @@
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             allowEmpty: TRUE
@@ -87,46 +88,61 @@
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
     bgSize:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
     classes:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
         reloadIfChanged: TRUE
     minHeight:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
         reloadIfChanged: TRUE
     id:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
         reloadIfChanged: TRUE
     name:
       type: string
       ui:
         label: i18n
         inspector:
-          group: 'sectionSettings'
+          group: 'nodeSettings'
         reloadIfChanged: TRUE
+
+'PSIT.NodeTypes:Section':
+  superTypes:
+    'PSIT.NodeTypes:BaseNode': TRUE
+  label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
+  ui:
+    label: i18n
+    icon: 'icon-folder-open-alt'
+    group: 'psit'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        nodeSettings:
+          label: i18n
+          position: 10
+
 
 'PSIT.NodeTypes:Container':
   superTypes:
-    'Neos.Neos:Content': TRUE
-    'Neos.Neos:ContentCollection': TRUE
+    'PSIT.NodeTypes:BaseNode': TRUE
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   ui:
     label: i18n
@@ -138,13 +154,6 @@
           label: i18n
           position: 10
   properties:
-    classes:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'containerSettings'
-        reloadIfChanged: TRUE
     fluid:
       type: boolean
       ui:
@@ -152,21 +161,6 @@
         inspector:
           group: 'containerSettings'
           position: 10
-        reloadIfChanged: TRUE
-
-    id:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'containerSettings'
-        reloadIfChanged: TRUE
-    name:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'containerSettings'
         reloadIfChanged: TRUE
 
 'PSIT.NodeTypes:Row':
@@ -301,6 +295,7 @@
 'PSIT.NodeTypes:ExtendedHeadline':
   superTypes:
     'Neos.NodeTypes.BaseMixins:TitleMixin': TRUE
+    'PSIT.NodeTypes:BaseNode': TRUE
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('title') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   ui:
     label: i18n
@@ -318,20 +313,51 @@
         inspector:
           group: 'extendedHeadlineSettings'
         reloadIfChanged: TRUE
+    id:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'extendedHeadlineSettings'
+        reloadIfChanged: TRUE
+
     title:
       ui:
+        inlineEditable: TRUE
         aloha:
+          placeholder: i18n
+          autoparagraph: TRUE
           'format':
             'strong': TRUE
             'em': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'del': TRUE
+            'p': TRUE
+            'h1': TRUE
+            'h2': TRUE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+            'pre': TRUE
+            'removeFormat': TRUE
+          'table':
+            'table': TRUE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
 
 'PSIT.NodeTypes:Card':
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'PSIT.NodeTypes:BaseNode': TRUE
  #   'Neos.Neos:ContentCollection': TRUE
   label: "${String.cropAtWord(String.trim(String.stripTags(q(node).property('name') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')))), 100, '...')}"
   childNodes:
-    panelNodes:
+    cardNodes:
       type: 'Neos.Neos:ContentCollection'
   ui:
     label: i18n
@@ -350,100 +376,6 @@
         inspector:
           group: 'cardSettings'
           position: 10
-        reloadIfChanged: TRUE
-    bgAttachment:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            allowEmpty: TRUE
-            placeholder: i18n
-            values:
-              fixed:
-                label: i18n
-              inherit:
-                label: i18n
-              initial:
-                label: i18n
-              local:
-                label: i18n
-              scroll:
-                label: i18n
-        reloadIfChanged: TRUE
-    bgColor:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-    bgImage:
-      type: 'Neos\Media\Domain\Model\ImageInterface'
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-          editorOptions:
-            allowEmpty: TRUE
-            features:
-              crop: TRUE
-    bgPosition:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            allowEmpty: TRUE
-            placeholder: i18n
-            values:
-              lt:
-                label: i18n
-              lc:
-                label: i18n
-              lb:
-                label: i18n
-              rt:
-                label: i18n
-              rc:
-                label: i18n
-              rb:
-                label: i18n
-              ct:
-                label: i18n
-              cc:
-                label: i18n
-              cb:
-                label: i18n
-        reloadIfChanged: TRUE
-    bgRepeat:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-    bgSize:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-    minHeight:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
-        reloadIfChanged: TRUE
-    classes:
-      type: string
-      ui:
-        label: i18n
-        inspector:
-          group: 'cardSettings'
         reloadIfChanged: TRUE
     headclasses:
       type: string
@@ -471,6 +403,13 @@
         label: i18n
         inspector:
           group: 'cardSettings'
+    bodyminHeight:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'cardSettings'
+        reloadIfChanged: TRUE
     footbgColor:
       type: string
       ui:
@@ -544,6 +483,14 @@
             'ul': TRUE
           'link':
             'a': TRUE
+    cardlink:
+      type: string
+      ui:
+        label: i18n
+        inlineEditable: FALSE
+        inspector:
+          group: 'cardSettings'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
     footerlink:
       type: string
       ui:
