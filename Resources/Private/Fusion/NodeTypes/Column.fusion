@@ -1,0 +1,66 @@
+prototype(PSIT.NodeTypes:Column) < prototype(PSIT.NodeTypes:BaseNode) {
+    attributes.class = ${'col' + (q(node).property('xs') ? '-' + q(node).property('xs') : '') + (q(node).property('lg') ?' col-lg-' + q(node).property('lg') : '') + (q(node).property('md') ? ' col-md-' + q(node).property('md') : '') + (q(node).property('sm') ? ' col-sm-' + q(node).property('sm') : '') + ' ' + q(node).property('classes')}
+    attributes.id = ${q(node).property('id')}
+    //content = Neos.Neos:ContentCollectionRenderer
+    //@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+
+    @context.classes = ${q(node).property('classes')}
+    id = ${q(node).property('id')}
+
+    @context.xs = Neos.Fusion:Case {
+        hasXS {
+            condition = ${q(node).property('xs')}
+            renderer = ${'col-' + q(node).property('xs')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = 'col'
+        }
+    }
+    @context.sm = Neos.Fusion:Case {
+        hasSM {
+            condition = ${q(node).property('sm')}
+            renderer = ${'col-sm-' + q(node).property('sm')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+    @context.md = Neos.Fusion:Case {
+        hasMD {
+            condition = ${q(node).property('md')}
+            renderer = ${'col-md-' + q(node).property('md')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.lg = Neos.Fusion:Case {
+        hasLG {
+            condition = ${q(node).property('lg')}
+            renderer = ${'col-lg-' + q(node).property('lg')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    colClasses = Neos.Fusion:Join {
+        xs = ${xs}
+        sm = ${sm}
+        md = ${md}
+        lg = ${lg}
+        classes = ${classes}
+        @glue = ' '
+    }
+
+    renderer = afx`
+<div class={props.colClasses} data-image-src={bgImage} style={props.containerStyle}>
+<Neos.Neos:ContentCollectionRenderer/>
+</div>
+`
+}

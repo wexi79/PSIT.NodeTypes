@@ -1,0 +1,3 @@
+prototype(PSIT.NodeTypes:ResponsiveImage) < prototype(Neos.NodeTypes:Image) {
+    classes = ${q(node).property('classes')}
+}
