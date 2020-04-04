@@ -1,6 +1,4 @@
-prototype(PSIT.NodeTypes:Section) < prototype(Neos.Neos:ContentComponent) {
-
-    @context.minHeight = ${q(node).property('minHeight')}
+prototype(PSIT.NodeTypes:Section) < prototype(PSIT.NodeTypes:BaseNode) {
 
     attributes {
         class = ${q(node).property('classes')}
@@ -115,14 +113,15 @@ prototype(PSIT.NodeTypes:Section) < prototype(Neos.Neos:ContentComponent) {
         bgImageStyle = ${bgImageStyle}
         bgPos = ${bgPosition}
         bgMinHeight = ${minHeight}
+        bgSize = ${bgSize}
         @glue = ';'
     }
 
-    content = Neos.Neos:ContentCollectionRenderer
+    //content = Neos.Neos:ContentCollectionRenderer
 
     renderer = afx`
 <section data-image-src={bgImage} style={props.sectionStyle}>
-{props.content}
+<Neos.Neos:ContentCollectionRenderer/>
 </section>
 `
 

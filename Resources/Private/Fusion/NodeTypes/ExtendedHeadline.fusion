@@ -1,3 +1,120 @@
-prototype(PSIT.NodeTypes:ExtendedHeadline){
+prototype(PSIT.NodeTypes:ExtendedHeadline) < prototype(PSIT.NodeTypes:BaseNode){
+
     classes = ${q(node).property('classes')}
+    id = ${q(node).property('id')}
+
+    @context.bgSize = Neos.Fusion:Case {
+        hasSize {
+            condition = ${q(node).property('bgSize')}
+            renderer = ${'background-size:' + q(node).property('bgSize')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+    @context.bgColor = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('bgColor')}
+            renderer = ${'background-color:' + q(node).property('bgColor')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bgImageStyle = Neos.Fusion:Case {
+
+        @context.bgImage = Neos.Neos:ImageUri {
+            asset = ${q(node).property('bgImage')}
+        }
+
+        hasImage {
+            condition = ${q(node).property('bgImage')}
+            renderer = ${'background:url(' +  bgImage + ')'}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+
+    }
+
+    @context.minHeight = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('minHeight')}
+            renderer = ${'min-height:' + q(node).property('minHeight')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bgPosition = Neos.Fusion:Case {
+
+        cb {
+            condition = ${q(node).property('bgPosition') == 'cb'}
+            renderer = ${'background-position: center bottom'}
+        }
+
+        cc {
+            condition = ${q(node).property('bgPosition') == 'cc'}
+            renderer = ${'background-position: center center'}
+        }
+
+        ct {
+            condition = ${q(node).property('bgPosition') == 'ct'}
+            renderer = ${'background-position: center top'}
+        }
+
+        lb {
+            condition = ${q(node).property('bgPosition') == 'lb'}
+            renderer = ${'background-position: left bottom'}
+        }
+
+        lc {
+            condition = ${q(node).property('bgPosition') == 'lc'}
+            renderer = ${'background-position: left center'}
+        }
+
+        lt {
+            condition = ${q(node).property('bgPosition') == 'lt'}
+            renderer = ${'background-position: left top'}
+        }
+
+        rb {
+            condition = ${q(node).property('bgPosition') == 'rb'}
+            renderer = ${'background-position: right bottom'}
+        }
+
+        rc {
+            condition = ${q(node).property('bgPosition') == 'rc'}
+            renderer = ${'background-position: right center'}
+        }
+
+        rt {
+            condition = ${q(node).property('bgPosition') == 'rt'}
+            renderer = ${'background-position: right top'}
+        }
+
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    headlineStyle = Neos.Fusion:Join {
+        bgColor = ${bgColor}
+        bgImageStyle = ${bgImageStyle}
+        bgPos = ${bgPosition}
+        bgMinHeight = ${minHeight}
+        bgSize = ${bgSize}
+        @glue = ';'
+    }
+
+    renderer = afx`
+    <div class={props.classes} data-image-src={bgImage} id={props.id} style={props.headlineStyle}><Neos.Neos:Editable property="title"/></div>
+`
 }

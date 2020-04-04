@@ -1,4 +1,4 @@
-prototype(PSIT.NodeTypes:Card) < prototype(Neos.Neos:ContentComponent){
+prototype(PSIT.NodeTypes:Card) < prototype(PSIT.NodeTypes:BaseNode){
 
     /*
 
@@ -20,8 +20,214 @@ prototype(PSIT.NodeTypes:Card) < prototype(Neos.Neos:ContentComponent){
 
     */
 
+    //cardNodes = Neos.Neos:ContentCollectionRenderer
+
+    @context.bgSize = Neos.Fusion:Case {
+        hasSize {
+            condition = ${q(node).property('bgSize')}
+            renderer = ${'background-size:' + q(node).property('bgSize')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+    @context.bgColor = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('bgColor')}
+            renderer = ${'background-color:' + q(node).property('bgColor')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bgImageStyle = Neos.Fusion:Case {
+
+        @context.bgImage = Neos.Neos:ImageUri {
+            asset = ${q(node).property('bgImage')}
+        }
+
+        hasImage {
+            condition = ${q(node).property('bgImage')}
+            renderer = ${'background:url(' +  bgImage + ')'}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+
+    }
+
+    @context.minHeight = Neos.Fusion:Case {
+        hasHeight {
+            condition = ${q(node).property('minHeight')}
+            renderer = ${'min-height:' + q(node).property('minHeight')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bgPosition = Neos.Fusion:Case {
+
+        cb {
+            condition = ${q(node).property('bgPosition') == 'cb'}
+            renderer = ${'background-position: center bottom'}
+        }
+
+        cc {
+            condition = ${q(node).property('bgPosition') == 'cc'}
+            renderer = ${'background-position: center center'}
+        }
+
+        ct {
+            condition = ${q(node).property('bgPosition') == 'ct'}
+            renderer = ${'background-position: center top'}
+        }
+
+        lb {
+            condition = ${q(node).property('bgPosition') == 'lb'}
+            renderer = ${'background-position: left bottom'}
+        }
+
+        lc {
+            condition = ${q(node).property('bgPosition') == 'lc'}
+            renderer = ${'background-position: left center'}
+        }
+
+        lt {
+            condition = ${q(node).property('bgPosition') == 'lt'}
+            renderer = ${'background-position: left top'}
+        }
+
+        rb {
+            condition = ${q(node).property('bgPosition') == 'rb'}
+            renderer = ${'background-position: right bottom'}
+        }
+
+        rc {
+            condition = ${q(node).property('bgPosition') == 'rc'}
+            renderer = ${'background-position: right center'}
+        }
+
+        rt {
+            condition = ${q(node).property('bgPosition') == 'rt'}
+            renderer = ${'background-position: right top'}
+        }
+
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    cardStyle = Neos.Fusion:Join {
+        bgColor = ${bgColor}
+        bgImageStyle = ${bgImageStyle}
+        bgPos = ${bgPosition}
+        bgMinHeight = ${minHeight}
+        bgSize = ${bgSize}
+        @glue = ';'
+    }
+
+    @context.collapsible = ${q(node).property('collapsible')}
+
+
+    @context.classes = ${q(node).property('classes')}
+    @context.bodyclasses = ${q(node).property('bodyclasses')}
+    @context.headclasses = ${q(node).property('headclasses')}
+    @context.footclasses = ${q(node).property('footclasses')}
+
+    @context.backend = ${site.context.inBackend}
+
+    @context.headbgColor = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('headbgColor')}
+            renderer = ${'background-color:' + q(node).property('headbgColor')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.footbgColor = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('footbgColor')}
+            renderer = ${'background-color:' + q(node).property('footbgColor')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bodybgColor = Neos.Fusion:Case {
+        hasColor {
+            condition = ${q(node).property('bodybgColor')}
+            renderer = ${'background-color:' + q(node).property('bodybgColor')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    @context.bodyminHeight = Neos.Fusion:Case {
+        hasHeight {
+            condition = ${q(node).property('bodyminHeight')}
+            renderer = ${'min-height:' + q(node).property('bodyminHeight')}
+        }
+        fallback {
+            condition = ${true}
+            renderer = ''
+        }
+    }
+
+    showheader = ${q(node).property('heading') || backend }
+    showfooter = ${q(node).property('footer') || backend }
+
+    cardlink = ${q(node).property('cardlink')}
+
+    cardClasses = Neos.Fusion:Join {
+        base = "card"
+        classes = ${classes}
+        @glue = " "
+    }
+
+    cardbodyClasses = Neos.Fusion:Join {
+        base = "card-block"
+        bodyclasses = ${bodyclasses}
+        @glue = " "
+    }
+
+    bodyStyle = Neos.Fusion:Join {
+        bodybgColor = ${bodybgColor}
+        bodyminHeight = ${bodyminHeight}
+        @glue = ';'
+    }
+
+    headerStyle = Neos.Fusion:Join {
+        headbgColor = ${headbgColor}
+        @glue = ';'
+    }
+
+    footerStyle = Neos.Fusion:Join {
+        footbgColor = ${footbgColor}
+        @glue = ';'
+    }
+
     renderer = afx`
-        <div class="card">
+        <div class={props.cardClasses} style={props.cardStyle}>
+        <div @if.showheader={props.showheader} class="card-header" style={props.headerStyle}><Neos.Neos:Editable property="heading"/></div>
+        <div class={props.cardbodyClasses} style={props.bodyStyle}>
+            <Neos.Neos:ContentCollectionRenderer/>
         </div>
+        <div @if.showfooter={props.showfooter} class="card-footer" style={props.footerStyle}><Neos.Neos:Editable property="footer"/></div>
+        </div>
+
     `
 }
