@@ -2,10 +2,8 @@ prototype(PSIT.NodeTypes:Container) < prototype(PSIT.NodeTypes:BaseNode) {
 
     @context.minHeight = ${q(node).property('minHeight')}
 
-    attributes {
-        class = ${q(node).property('classes')}
-        id = ${q(node).property('id')}
-    }
+    classes = ${q(node).property('classes')}
+    id = ${q(node).property('id')}
 
     @context.bgSize = Neos.Fusion:Case {
         hasSize {
@@ -121,7 +119,7 @@ prototype(PSIT.NodeTypes:Container) < prototype(PSIT.NodeTypes:BaseNode) {
     //content = Neos.Neos:ContentCollectionRenderer
 
     renderer = afx`
-<div class="container" data-image-src={bgImage} style={props.containerStyle}>
+<div class="container" data-image-src={bgImage} style={props.containerStyle} id={props.id}>
 <Neos.Neos:ContentCollectionRenderer/>
 </div>
 `

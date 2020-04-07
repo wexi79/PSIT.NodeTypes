@@ -1,0 +1,15 @@
+prototype(PSIT.NodeTypes:Anchor) < prototype(Neos.Neos:ContentComponent) {
+
+    @context.classes = ${q(node).property('classes')}
+    id = ${q(node).property('id')}
+
+    anchorClasses = Neos.Fusion:Join {
+        base = ""
+        classes = ${classes}
+        @glue = " "
+    }
+
+    renderer = afx`
+        <span class={props.anchorClasses} id={props.id}></span>
+    `
+}

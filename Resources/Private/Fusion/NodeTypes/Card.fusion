@@ -204,6 +204,18 @@ prototype(PSIT.NodeTypes:Card) < prototype(PSIT.NodeTypes:BaseNode){
         @glue = " "
     }
 
+    cardheadClasses = Neos.Fusion:Join {
+        base = "card-header"
+        headclasses = ${headclasses}
+        @glue = " "
+    }
+
+    cardfootClasses = Neos.Fusion:Join {
+        base = "card-footer"
+        footclasses = ${footclasses}
+        @glue = " "
+    }
+
     bodyStyle = Neos.Fusion:Join {
         bodybgColor = ${bodybgColor}
         bodyminHeight = ${bodyminHeight}
@@ -222,11 +234,11 @@ prototype(PSIT.NodeTypes:Card) < prototype(PSIT.NodeTypes:BaseNode){
 
     renderer = afx`
         <div class={props.cardClasses} style={props.cardStyle}>
-        <div @if.showheader={props.showheader} class="card-header" style={props.headerStyle}><Neos.Neos:Editable property="heading"/></div>
+        <div @if.showheader={props.showheader} class={props.cardheadClasses} style={props.headerStyle}><Neos.Neos:Editable property="heading"/></div>
         <div class={props.cardbodyClasses} style={props.bodyStyle}>
             <Neos.Neos:ContentCollectionRenderer/>
         </div>
-        <div @if.showfooter={props.showfooter} class="card-footer" style={props.footerStyle}><Neos.Neos:Editable property="footer"/></div>
+        <div @if.showfooter={props.showfooter} class={props.cardfootClasses} style={props.footerStyle}><Neos.Neos:Editable property="footer"/></div>
         </div>
 
     `
