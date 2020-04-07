@@ -1,6 +1,6 @@
 prototype(PSIT.NodeTypes:ResponsiveImage) < prototype(Neos.Neos:ContentComponent) {
-    src = RukFi.Site:Component.ImageUri {
-        @context.asset = ${q(node).property('image')}
+    src = Neos.Neos:ImageUri {
+        asset = ${q(node).property('image')}
     }
 
     @context.classes = ${q(node).property('classes')}
