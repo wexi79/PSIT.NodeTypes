@@ -1,0 +1,30 @@
+prototype(PSIT.NodeTypes:Timeline) < prototype(Neos.Neos:ContentComponent) {
+
+        items = ${q(node).children()}
+
+        renderer = afx`
+            <div class="cd-horizontal-timeline loaded">
+                <div class="timeline">
+                    <div class="events-wrapper">
+                        <div class="events">
+                            <ol class="eventlist">
+                                <Neos.Fusion:Collection collection={props.items} itemName="item" iterationName="iteration">
+                                    <li><a href="#0" data-date={item.properties.date}>{item.properties.date}</a></li>
+                                </Neos.Fusion:Collection>
+                            </ol>
+                            <span class="filling-line" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <ul class="cd-timeline-navigation">
+                        <li><a href="#0" class="prev">Prev</a></li>
+                        <li><a href="#0" class="next">Next</a></li>
+                    </ul>
+                </div>
+                <div class="events-content">
+                    <ol>
+                        <Neos.Neos:ContentCollectionRenderer/>
+                    </ol>
+                </div>
+            </div>
+        `
+}

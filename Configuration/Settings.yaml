@@ -15,3 +15,20 @@ Neos:
           position: 400
           label: 'PSIT'
           collapsed: FALSE
+Carbon:
+  IncludeAssets:
+    Packages:
+      'aa_PSIT.NodeTypes':
+        Package: 'PSIT.NodeTypes'
+        Path:
+          Inline:
+            CSS: 'Public/Frontend'
+            JS: 'Public/Frontend'
+          File:
+            CSS: 'Public/Frontend'
+            JS: 'Public/Frontend'
+        General:
+          Head:
+            - timeline.css
+          Body:
+            - timeline.js
