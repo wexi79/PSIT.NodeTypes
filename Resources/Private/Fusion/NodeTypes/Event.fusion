@@ -1,0 +1,10 @@
+prototype(PSIT.NodeTypes:Event) < prototype(Neos.Neos:ContentComponent) {
+
+    date = ${q(node).property('date')}
+
+    renderer = afx`
+        <li class="" data-date={props.date}>
+        <Neos.Neos:ContentCollectionRenderer/>
+        </li>
+`
+}
