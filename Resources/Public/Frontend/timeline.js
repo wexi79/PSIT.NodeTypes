@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
        jQuery(this).css('left', eventDistance);
         eventDistance = eventDistance + 60;
     });
-    console.log(eventDistance);
+    //console.log(eventDistance);
     jQuery(".events").css('width', eventDistance);
     (timelines.length > 0) && initTimeline(timelines);
 
@@ -63,12 +63,12 @@ jQuery(document).ready(function($){
 
             //on swipe, show next/prev event content
             timelineComponents['eventsContent'].on('swipeleft', function(){
-                console.log('swipe left');
+                //console.log('swipe left');
                 var mq = checkMQ();
                 ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'next');
             });
             timelineComponents['eventsContent'].on('swiperight', function(){
-                console.log('swipe right');
+                //console.log('swipe right');
                 var mq = checkMQ();
                 ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'prev');
             });
@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
                     showNewContent(timelineComponents, timelineTotWidth, 'next');
                 }
             });
-            console.log(timelineTotWidth);
+            //console.log(timelineTotWidth);
             updateFilling($('.tl-selected'), timelineComponents['fillingLine'], timelineTotWidth);
             updateVisibleContent($('.tl-selected'), timelineComponents['eventsContent']);
         });
@@ -93,8 +93,8 @@ jQuery(document).ready(function($){
             wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
         //translate the timeline to the left('next')/right('prev')
 
-        console.log(wrapperWidth);
-        console.log(timelineTotWidth);
+        //console.log(wrapperWidth);
+        //console.log(timelineTotWidth);
 
         (string == 'next')
             ? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
@@ -128,15 +128,15 @@ jQuery(document).ready(function($){
         var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
 
         if( (string == 'next' && eventLeft > (timelineWidth - eventsMinDistance) - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate) ) {
-            console.log('trigger translate');
+            //console.log('trigger translate');
             translateTimeline(timelineComponents, - eventLeft + timelineWidth/2, timelineWidth - timelineTotWidth);
         }
     }
 
     function translateTimeline(timelineComponents, value, totWidth) {
 
-        console.log(value);
-        console.log(totWidth);
+        //console.log(value);
+        //console.log(totWidth);
 
         var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
         value = (value > 0) ? 0 : value; //only negative translate value
@@ -154,15 +154,15 @@ jQuery(document).ready(function($){
             eventWidth = eventStyle.getPropertyValue("width");
         eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
 
-        console.log(eventLeft);
+        //console.log(eventLeft);
 
         var eventCount = jQuery(".eventlist a").length;
 
-        console.log(eventCount);
+        //console.log(eventCount);
 
         var scaleValue = eventLeft/totWidth;
 
-        console.log('Scalevalue: '  + scaleValue);
+        //console.log('Scalevalue: '  + scaleValue);
         setTransformValue(filling.get(0), 'scaleX', scaleValue);
     }
 
@@ -183,7 +183,7 @@ jQuery(document).ready(function($){
         updateFilling(timelineComponents['eventsWrapper'].find('a.tl-selected'), timelineComponents['fillingLine'], totalWidth);
         updateTimelinePosition('next', timelineComponents['eventsWrapper'].find('a.tl-selected'), timelineComponents);
 
-        console.log(totalWidth);
+        //console.log(totalWidth);
 
         totalWidth = timelineComponents['timelineDates'].length * width;
 
@@ -233,7 +233,7 @@ jQuery(document).ready(function($){
             var translateValue = 0;
         }
 
-        console.log(translateValue);
+        //console.log(translateValue);
 
         return Number(translateValue);
     }
@@ -249,10 +249,10 @@ jQuery(document).ready(function($){
     //based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
     function parseDate(events) {
         var dateArrays = [];
-        console.log(events);
+        //console.log(events);
         events.each(function(){
             var singleDate = $(this);
-                console.log(singleDate.data('date'));
+                //console.log(singleDate.data('date'));
                 dateComp = singleDate.data('date').toString().split('T');
             if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
                 var dayComp = dateComp[0].split('/'),
